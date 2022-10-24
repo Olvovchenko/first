@@ -9,9 +9,9 @@ function App() {
       <body>
     <div className="App">
       <header className="App-header">
-        <h1>
+        <h2>
         Гадание по книгам. Получи ответ свой на вопрос и совет на будущее. 
-        </h1>
+        </h2>
       </header>
       <button onClick={()=> handleClick()}>Нажми и ты получишь ответ</button>
       <div className="Answer">
