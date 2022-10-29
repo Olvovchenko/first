@@ -1,10 +1,13 @@
 import './App.css';
 import Child from './Child'
-import React, {useState, useCallback} from 'react';
+import React, {useState, useCallback, useRef, useEffect} from 'react';
 
 function App() {
   const[ran,setRan] = useState(0);
-     const handleClick=useCallback(()=>setRan(Math.floor(Math.random()*11)+1),[]);
+  const count = useRef(0);
+  useEffect(() =>{count.current = count.current+1;});
+
+     const handleClick=useCallback(()=>setRan(count.current<5?Math.floor(Math.random()*11)+1:12),[]);
     return (
       <body>
     <div className="App">
