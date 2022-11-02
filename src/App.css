@@ -1,8 +1,18 @@
-body {
+body{
   background-image: url('https://gamerwall.pro/uploads/posts/2021-12/thumbs/1639670432_2-gamerwall-pro-p-komnata-magii-fentezi-krasivo-oboi-2.jpg');
   background-repeat:no-repeat;
   background-size: cover;
   background-attachment: fixed;
+}
+
+
+
+
+body.AP1{
+  background-image: url('https://phonoteka.org/uploads/posts/2021-06/1623784031_25-phonoteka_org-p-abstraktnoe-zvezdnoe-nebo-oboi-krasivo-28.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
 .App {
    text-align: center;
