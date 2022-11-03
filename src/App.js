@@ -2,6 +2,7 @@ import './App.css';
 import Child from './Child';
 import ButStyle from './Btn';
 import React, {useState, useCallback, useRef, useEffect} from 'react';
+import MyInp from './Inp';
 
 
 
@@ -44,12 +45,14 @@ function App() {
       </header>
       <form>
       <h3 style={{color:'lightcoral'}}> Введите, пожалуйста свое имя</h3>
-      <input type="text" 
+      
+      
+      <MyInp type="text" 
       value={value1}
       placeholder="Полное имя"
       onChange = {event => setValue1(event.target.value)}
       onKeyUp = {handlerKeyUp}
-      ></input>
+      />
       <input 
       type="text"
       value ={value2}
@@ -61,7 +64,7 @@ function App() {
       </form>
       <button onClick={()=> handleClick()}>Нажми и ты получишь ответ</button>
       <br />
-      <ButStyle>Подробности...</ButStyle>
+      <ButStyle disabled>Подробности...</ButStyle>
       <div className="Answer">
       <Child new={ran} />
       </div>
