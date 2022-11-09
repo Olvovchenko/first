@@ -3,6 +3,8 @@ import Child from './Child';
 import ButStyle from './Btn';
 import React, {useState, useCallback, useRef, useEffect} from 'react';
 import MyInp from './Inp';
+import Quantity from './Quantity.js';
+import Summary from './Summary.js'
 
 
 
@@ -10,6 +12,8 @@ function App() {
   const[ran,setRan] = useState(0);
   const[value1,setValue1]=useState('');
   const[value2,setValue2]=useState('');
+  const[summar,setSummar]=useState(0);
+  const newsum=(n)=>setSummar(summar+n);
   
   const count = useRef(0);
   useEffect(() =>{
@@ -43,10 +47,10 @@ function App() {
         Гадание по книгам. Получи ответ свой на вопрос и совет на будущее. 
         </h2>
       </header>
+      <Summary summar={summar}/>
+      <Quantity newsum={newsum}/>
       <form>
       <h3 style={{color:'lightcoral'}}> Введите, пожалуйста свое имя</h3>
-      
-      
       <MyInp type="text" 
       value={value1}
       placeholder="Полное имя"
