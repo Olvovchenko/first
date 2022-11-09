@@ -4,7 +4,8 @@ import ButStyle from './Btn';
 import React, {useState, useCallback, useRef, useEffect} from 'react';
 import MyInp from './Inp';
 import Quantity from './Quantity.js';
-import Summary from './Summary.js'
+import Summary from './Summary.js';
+import Context from './Context.js'
 
 
 
@@ -14,6 +15,10 @@ function App() {
   const[value2,setValue2]=useState('');
   const[summar,setSummar]=useState(0);
   const newsum=(n)=>setSummar(summar+n);
+  const value ={
+    summar,
+    newsum
+  }
   
   const count = useRef(0);
   useEffect(() =>{
@@ -47,8 +52,10 @@ function App() {
         Гадание по книгам. Получи ответ свой на вопрос и совет на будущее. 
         </h2>
       </header>
-      <Summary summar={summar}/>
-      <Quantity newsum={newsum}/>
+      <Context.Provider value={value}>
+      <Summary />
+      <Quantity />
+      </Context.Provider>
       <form>
       <h3 style={{color:'lightcoral'}}> Введите, пожалуйста свое имя</h3>
       <MyInp type="text" 
